@@ -1,6 +1,7 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import random as rand
 
@@ -43,7 +44,7 @@ prediction = model.predict(test_images)
 # predicted_class = [class_names[i] for i in np.argmax(prediction, axis=1)]
 for i in range(5, 10):
     plt.grid(False)
-    plt.imshow(train_images[i], cmap=plt.cm.binary)
+    plt.imshow(train_images[i], cmap='gray_r')
     plt.xlabel("Actual " + class_names[test_labels[i]])
     plt.title('prediction ' + class_names[np.argmax(prediction[i])])
     plt.show()
